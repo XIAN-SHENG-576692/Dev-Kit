@@ -1,5 +1,6 @@
 clang
 clang-format
+clang-tidy
 gdb
 libclang-16-dev
 python3
