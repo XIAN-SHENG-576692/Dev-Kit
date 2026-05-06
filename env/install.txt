@@ -1,6 +1,7 @@
 git
 gh
 neovim
+sudo
 tree
 unzip
 zip
