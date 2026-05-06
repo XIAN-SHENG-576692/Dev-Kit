@@ -1,6 +1,8 @@
+build-essential
 clang
 clang-format
 clang-tidy
+cmake
 gdb
 libclang-16-dev
 python3
