@@ -1,0 +1,7 @@
+ms-vscode.cpptools
+ms-vscode.cpptools-extension-pack
+ms-vscode.cmake-tools
+ms-vscode.makefile-tools
+formulahendry.code-runner
+usernamehw.errorlens
+cschlosser.doxdocgen

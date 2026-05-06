@@ -1,0 +1,6 @@
+git
+gh
+neovim
+tree
+unzip
+zip

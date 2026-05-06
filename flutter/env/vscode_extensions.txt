@@ -1,0 +1,8 @@
+# Dart language support
+Dart-Code.dart-code
+
+# Flutter support
+Dart-Code.flutter
+
+# Gradle support for Android projects
+vscjava.vscode-gradle
