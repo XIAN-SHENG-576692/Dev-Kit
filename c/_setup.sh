@@ -15,8 +15,9 @@ chmod -R +x "${ROOT_DIR}"
 chmod -R +x "${SCRIPT_DIR}"
 
 # Installation
-grep -v '^#' "${ROOT_ENV_INSTALL_TXT}" | xargs -L 1 \
-    "${ROOT_DIR}/install_cross_platform.sh" \
+cat "${ROOT_ENV_INSTALL_TXT}" "${ENV_INSTALL_TXT}" \
+    | grep -v '^#' \
+    | xargs -L 1 "${ROOT_DIR}/install_cross_platform.sh" \
     && python3 -m venv "${PYTHON_VENV}" \
     && source "${PYTHON_VENV_ACTIVATE}" \
     && pip3 install -r "${PYTHON_REQUIREMENTS_TXT}" \

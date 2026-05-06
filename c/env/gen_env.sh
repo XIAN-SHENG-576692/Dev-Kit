@@ -11,6 +11,7 @@ chmod -R +x "${ROOT_DIR}"
 cat <<EOF
 
 ENV_DIR="${SCRIPT_DIR}"
+ENV_INSTALL_TXT="\${ENV_DIR}/install.txt"
 
 PYTHON_ENV_DIR="${SCRIPT_DIR}/python"
 PYTHON_REQUIREMENTS_TXT="\${PYTHON_ENV_DIR}/requirements.txt"

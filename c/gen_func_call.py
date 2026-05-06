@@ -28,7 +28,7 @@ def main():
     for func in function_list:
         # parameters
         cursor=func["cursor"]
-        args_declare=[f"{arg.type.spelling} {arg.spelling}" for arg in func["args_cursor"]]
+        args_declare=[" ".join([token.spelling for token in arg.get_tokens()]) for arg in func["args_cursor"]]
         args_declare_in_struct="".join([f"{arg};" for arg in args_declare])
         args_pass=",".join([f"args->{arg.spelling}" for arg in func["args_cursor"]])
         args_struct_name=f"__{cursor.spelling}_args__"

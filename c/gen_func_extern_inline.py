@@ -37,7 +37,7 @@ def main():
     for func in function_list:
         # parameters
         cursor=func["cursor"]
-        args_declare=[f"{arg.type.spelling} {arg.spelling}" for arg in func["args_cursor"]]
+        args_declare=[" ".join([token.spelling for token in arg.get_tokens()]) for arg in func["args_cursor"]]
         args_declare_in_func=",".join(args_declare)
         # function
         output+=f"extern inline {cursor.result_type.spelling} {cursor.spelling}({args_declare_in_func});"
