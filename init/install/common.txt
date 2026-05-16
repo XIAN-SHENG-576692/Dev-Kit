@@ -1,0 +1,14 @@
+# GitHub
+git
+gh
+
+# LLM
+npm
+
+# Others
+less
+neovim
+sudo
+tree
+unzip
+zip

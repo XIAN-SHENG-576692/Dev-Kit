@@ -7,7 +7,7 @@ Chen-Xian-Sheng Development Kit.
 ```bash
 git clone --filter=tree:0 --depth=1 --no-tags \
 https://github.com/XIAN-SHENG-576692/Dev-Kit.git \
-&& chmod -R +x Dev-Kit/*.sh
+&& chmod -R +x Dev-Kit/*
 ```
 
 ## File Structure

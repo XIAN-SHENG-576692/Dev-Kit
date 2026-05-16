@@ -5,9 +5,15 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-# Configuration
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
-. "$SCRIPT_DIR/env/config.env"
+
+# Configuration
+ROOT_DIR=$(cd "${SCRIPT_DIR}/.."; pwd)
+ENV_DIR="${ROOT_DIR}/env"
+ENV_FILE="${ENV_DIR}/.env"
+
+# Configuration Load
+source "${ENV_FILE}"
 
 INPUT_FILE_PATH=$1
 INPUT_FILE_DIR="$(dirname "$INPUT_FILE_PATH")"
