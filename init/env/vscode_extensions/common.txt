@@ -3,3 +3,6 @@ google.geminicodeassist
 
 # GitHub actions support
 github.vscode-github-actions
+
+# Codex
+openai.chatgpt

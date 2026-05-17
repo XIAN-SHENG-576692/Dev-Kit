@@ -13,8 +13,9 @@ https://github.com/XIAN-SHENG-576692/Dev-Kit.git \
 ## Initialize
 
 ```bash
-Dev-Kit/init/gen_env.sh
-Dev-Kit/init/gen_env_install.sh ...
+Dev-Kit/init/env/gen_env.sh
+Dev-Kit/init/env/gen_env_install.sh ...
+Dev-Kit/init/others/ ...
 Dev-Kit/init/setup.sh
 ```
 

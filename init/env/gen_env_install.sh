@@ -58,7 +58,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Configuration
-ROOT_DIR=$(cd "${SCRIPT_DIR}/.."; pwd)
+ROOT_DIR=$(cd "${SCRIPT_DIR}/../.."; pwd)
 ENV_DIR="${ROOT_DIR}/env"
 ENV_FILE="${ENV_DIR}/.env"
 
