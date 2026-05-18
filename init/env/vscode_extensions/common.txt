@@ -1,8 +1,4 @@
-# Gemini Code Assist
-google.geminicodeassist
+eamodio.gitlens
 
 # GitHub actions support
 github.vscode-github-actions
-
-# Codex
-openai.chatgpt

@@ -2,9 +2,6 @@
 git
 gh
 
-# LLM
-npm
-
 # Others
 less
 neovim

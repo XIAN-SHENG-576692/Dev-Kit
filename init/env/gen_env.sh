@@ -10,6 +10,8 @@ ENV_FILE="${ENV_DIR}/.env"
 # Parameters
 INIT_DIR="${ROOT_DIR}/init"
 mkdir -p "${INIT_DIR}"
+NPM_DIR="${ENV_DIR}/npm"
+mkdir -p "${NPM_DIR}"
 PYTHON_DIR="${ENV_DIR}/python"
 mkdir -p "${PYTHON_DIR}"
 PYTHON_VENV_DIR="${PYTHON_DIR}/venv"
@@ -21,6 +23,8 @@ ENV=(
     INIT_DIR="${INIT_DIR}"
     INIT_ENV_DIR="${INIT_DIR}/env"
     INSTALL_TXT="${ENV_DIR}/install.txt"
+    NPM_DIR="${NPM_DIR}"
+    NPM_INSTALL_TXT="${NPM_DIR}"/install.txt
     PYTHON_DIR="${PYTHON_DIR}"
     PYTHON_REQUIREMENTS_TXT="${PYTHON_DIR}/requirements.txt"
     PYTHON_VENV_DIR="${PYTHON_VENV_DIR}"

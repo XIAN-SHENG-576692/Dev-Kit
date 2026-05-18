@@ -15,8 +15,8 @@ https://github.com/XIAN-SHENG-576692/Dev-Kit.git \
 ```bash
 Dev-Kit/init/env/gen_env.sh
 Dev-Kit/init/env/gen_env_install.sh ...
-Dev-Kit/init/others/ ...
 Dev-Kit/init/setup.sh
+Dev-Kit/init/others/ ...
 ```
 
 ## File Structure
