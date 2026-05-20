@@ -1,1 +1,2 @@
-cargo-typify
+# cargo-typify
+structr
