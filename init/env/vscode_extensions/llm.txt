@@ -1,3 +1,5 @@
+google.gemini-cli-vscode-ide-companion
+
 # Gemini Code Assist
 google.geminicodeassist
 

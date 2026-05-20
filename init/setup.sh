@@ -10,12 +10,16 @@ ENV_FILE="${ENV_DIR}/.env"
 source "${ENV_FILE}"
 
 # Installation
-cat "${INSTALL_TXT}" \
-    | grep -v '^#' \
-    | xargs -L 1 "${TOOLS_DIR}/utils/install_cross_platform.sh"
+grep -v '^#' "${INSTALL_TXT}" \
+    | xargs "${TOOLS_DIR}/utils/install_cross_platform.sh"
 
 grep -v '^#' "${VSCODE_EXTENSIONS_TXT}" \
     | xargs -L 1 code --force --install-extension
+
+if command -v cargo >/dev/null 2>&1; then
+    grep -v '^#' "${CARGO_INSTALL_TXT}" \
+        | xargs cargo install
+fi
 
 if command -v npm >/dev/null 2>&1; then
     grep -v '^#' "${NPM_INSTALL_TXT}" \

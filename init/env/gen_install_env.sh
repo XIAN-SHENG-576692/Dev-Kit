@@ -6,6 +6,7 @@ usage() {
     echo "Usage: $0 [OPTION]..."
     echo ""
     echo "Options:"
+    echo "  -c, --cargo, --cargo-install [FILE_0 FILE_1 ...]"
     echo "  -h, --help"
     echo "  -i, --in, --install [FILE_0 FILE_1 ...]"
     echo "  -n, --npm, --npm-install [FILE_0 FILE_1 ...]"
@@ -18,6 +19,7 @@ if [ "$#" -eq 0 ]; then
     usage
 fi
 
+CARGO_INSTALL_ARRAY=()
 INSTALL_ARRAY=()
 NPM_INSTALL_ARRAY=()
 PYTHON_REQUIREMENTS_ARRAY=()
@@ -25,6 +27,14 @@ VSCODE_EXTENSIONS_ARRAY=()
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        -c|--cargo|--cargo-install)
+            shift
+            # Loop until the next argument is an option or we run out of arguments
+            while [[ $# -gt 0 && ! "$1" =~ ^- ]]; do
+                CARGO_INSTALL_ARRAY+=("$1")
+                shift
+            done
+            ;;
         -h|--help)
             usage
             ;;
@@ -76,6 +86,14 @@ ENV_FILE="${ENV_DIR}/.env"
 source "${ENV_FILE}"
 source "${TOOLS_DIR}/utils/join_by_string.sh"
 
+# Configuration cargo Install
+CARGO_INSTALL=()
+for item in ${CARGO_INSTALL_ARRAY[@]}; do
+    mapfile -t -O "${#CARGO_INSTALL[@]}" CARGO_INSTALL < <(grep -Ev '^#|^$' "${item}")
+done
+CARGO_INSTALL=($(printf "%s\n" "${CARGO_INSTALL[@]}" | awk '!x[$0]++'))
+CARGO_INSTALL_CONTEXT=$(join_by_string "\n" "${CARGO_INSTALL[@]}")
+
 # Configuration Install
 INSTALL=()
 for item in ${INSTALL_ARRAY[@]}; do
@@ -109,6 +127,7 @@ VSCODE_EXTENSIONS=($(printf "%s\n" "${VSCODE_EXTENSIONS[@]}" | awk '!x[$0]++'))
 VSCODE_EXTENSIONS_CONTEXT=$(join_by_string "\n" "${VSCODE_EXTENSIONS[@]}")
 
 # Output
+echo -e ${CARGO_INSTALL_CONTEXT} > "${CARGO_INSTALL_TXT}"
 echo -e ${INSTALL_CONTEXT} > "${INSTALL_TXT}"
 echo -e ${NPM_INSTALL_CONTEXT} > "${NPM_INSTALL_TXT}"
 echo -e ${PYTHON_REQUIREMENTS_CONTEXT} > "${PYTHON_REQUIREMENTS_TXT}"

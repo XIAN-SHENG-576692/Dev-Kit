@@ -18,6 +18,7 @@ PYTHON_VENV_DIR="${PYTHON_DIR}/venv"
 mkdir -p "${PYTHON_VENV_DIR}"
 
 ENV=(
+    CARGO_INSTALL_TXT="${ENV_DIR}/cargo_install.txt"
     ENV_DIR="${ENV_DIR}"
     ENV_FILE="${ENV_FILE}"
     INIT_DIR="${INIT_DIR}"
@@ -26,7 +27,7 @@ ENV=(
     NPM_DIR="${NPM_DIR}"
     NPM_INSTALL_TXT="${NPM_DIR}"/install.txt
     PYTHON_DIR="${PYTHON_DIR}"
-    PYTHON_REQUIREMENTS_TXT="${PYTHON_DIR}/requirements.txt"
+    PYTHON_REQUIREMENTS_TXT="${ENV_DIR}/python_requirements.txt"
     PYTHON_VENV_DIR="${PYTHON_VENV_DIR}"
     PYTHON_VENV_ACTIVATE="${PYTHON_VENV_DIR}/bin/activate"
     ROOT_DIR="${ROOT_DIR}"
