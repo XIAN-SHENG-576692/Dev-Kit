@@ -5,6 +5,7 @@ gh
 # Others
 less
 neovim
+procps
 sudo
 tree
 unzip
