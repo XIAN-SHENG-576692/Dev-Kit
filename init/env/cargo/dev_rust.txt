@@ -1,2 +1,5 @@
+# https://github.com/oxidecomputer/typify/blob/main/cargo-typify/README.md
 # cargo-typify
-structr
+
+# https://github.com/bahdotsh/structr
+# structr
