@@ -12,6 +12,10 @@ https://github.com/XIAN-SHENG-576692/Dev-Kit.git \
 
 ## Initialize
 
+There are several ways of initialization.
+
+### Step-by-step initialization
+
 ```bash
 Dev-Kit/init/env/gen_env.sh
 Dev-Kit/init/env/gen_install_env.sh ...
@@ -19,6 +23,13 @@ Dev-Kit/init/others/ ...
 Dev-Kit/init/setup.sh
 Dev-Kit/init/others/ ...
 ```
+
+### Use a common case script
+
+```bash
+Dev-Kit/init_common/...
+```
+
 
 ## File Structure
 

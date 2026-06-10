@@ -1,0 +1,12 @@
+biber
+curl
+ghostscript
+git
+latexmk
+libfile-homedir-perl
+libyaml-tiny-perl
+make
+perl
+tex-fmt
+texlive-extra-utils
+texlive-full
