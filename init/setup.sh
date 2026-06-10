@@ -10,24 +10,31 @@ ENV_FILE="${ENV_DIR}/.env"
 source "${ENV_FILE}"
 
 # Installation
-grep -v '^#' "${INSTALL_TXT}" \
+[ -f "${INSTALL_TXT}" ] \
+    && grep -v '^#' "${INSTALL_TXT}" \
     | xargs "${TOOLS_DIR}/utils/install_cross_platform.sh"
 
-grep -v '^#' "${VSCODE_EXTENSIONS_TXT}" \
+[ -f "${VSCODE_EXTENSIONS_TXT}" ] \
+    && grep -v '^#' "${VSCODE_EXTENSIONS_TXT}" \
     | xargs -L 1 code --force --install-extension
 
 if command -v cargo >/dev/null 2>&1; then
-    grep -v '^#' "${CARGO_INSTALL_TXT}" \
-        | xargs cargo install
+    if [ -f "${CARGO_INSTALL_TXT}" ]; then
+        grep -v '^#' "${CARGO_INSTALL_TXT}" | grep -v '^$' | while read -r line; do
+            cargo install $line
+        done
+    fi
 fi
 
 if command -v npm >/dev/null 2>&1; then
-    grep -v '^#' "${NPM_INSTALL_TXT}" \
+    [ -f "${NPM_INSTALL_TXT}" ] \
+        && grep -v '^#' "${NPM_INSTALL_TXT}" \
         | xargs npm install -g
 fi
 
 if command -v python3 >/dev/null 2>&1; then
-    python3 -m venv "${PYTHON_VENV_DIR}" \
+    [ -f "${PYTHON_REQUIREMENTS_TXT}" ] \
+        && python3 -m venv "${PYTHON_VENV_DIR}" \
         && source "${PYTHON_VENV_ACTIVATE}" \
         && pip3 install -r "${PYTHON_REQUIREMENTS_TXT}" \
         && pip3 list \

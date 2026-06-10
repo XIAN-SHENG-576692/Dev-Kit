@@ -61,10 +61,9 @@ while [[ $# -gt 0 ]]; do
         shift
     done
     FILE_ITEMS=()
-    for item in ${FILE_ARRAY[@]}; do
+    for item in "${FILE_ARRAY[@]}"; do
         mapfile -t -O "${#FILE_ITEMS[@]}" FILE_ITEMS < <(grep -Ev '^#|^$' "${item}")
     done
-    FILE_ITEMS=($(printf "%s\n" "${FILE_ITEMS[@]}" | awk '!x[$0]++'))
-    FILE_CONTEXT=$(join_by_string "\n" "${FILE_ITEMS[@]}")
-    echo -e ${FILE_CONTEXT} > "${FILE}"
+    mapfile -t UNIQUE_ITEMS < <(printf "%s\n" "${FILE_ITEMS[@]}" | awk '!x[$0]++')
+    printf "%s\n" "${UNIQUE_ITEMS[@]}" > "${FILE}"
 done
