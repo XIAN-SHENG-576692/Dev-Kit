@@ -1,2 +1,4 @@
+# For fetch https://sh.rustup.rs
 curl
+
 rustc

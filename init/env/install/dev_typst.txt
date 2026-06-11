@@ -1,5 +1,17 @@
+# For compile typst
 build-essential
+
+# Fix curl: (77) error setting certificate file
 ca-certificates
+
+# For download https://sh.rustup.rs
 curl
+
+# For compile typst
 libssl-dev
+
+# For compile typst
 pkg-config
+
+# For unzip fonts.zip from anywhere
+unzip
