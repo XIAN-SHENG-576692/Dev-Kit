@@ -4,8 +4,10 @@ gh
 
 # Others
 less
+lsof
 neovim
 procps
+psmisc
 sudo
 tree
 unzip
