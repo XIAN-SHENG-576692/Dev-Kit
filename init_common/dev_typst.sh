@@ -16,7 +16,7 @@ ${ROOT_DIR}/init/env/gen_install_txt.sh \
 
 ${ROOT_DIR}/init/setup.sh
 
-source ${ROOT_DIR}/init/others/install_rustc.sh
+rustup default stable
 
 # ==================================================
 ${ROOT_DIR}/init/env/rm_install_txt.sh
@@ -31,3 +31,5 @@ ${ROOT_DIR}/init/env/gen_install_txt.sh \
     ${ROOT_DIR}/init/env/vscode_extensions/dev_typst.txt \
 
 ${ROOT_DIR}/init/setup.sh
+
+${ROOT_DIR}/init/others/export_cargo_env.sh
