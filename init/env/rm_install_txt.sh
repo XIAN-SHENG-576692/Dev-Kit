@@ -10,10 +10,5 @@ ENV_FILE="${ENV_DIR}/.env"
 # Configuration Load
 source "${ENV_FILE}"
 
-rm "${CARGO_INSTALL_TXT}" 2> /dev/null
-rm "${INSTALL_TXT}" 2> /dev/null
-rm "${NPM_INSTALL_TXT}" 2> /dev/null
-rm "${PYTHON_REQUIREMENTS_TXT}" 2> /dev/null
-rm "${VSCODE_EXTENSIONS_TXT}" 2> /dev/null
-
-exit 0
+cd "${ENV_DIR}" \
+&& $(rm *.txt 2> /dev/null || true)
