@@ -7,5 +7,8 @@ curl
 # Allow run Podman in container
 fuse-overlayfs
 
+# Fix Error: netavark: nftables error: unable to execute nft: No such file or directory (os error 2)
+nftables
+
 # For running ghcr.io/typst/typst:latest
 podman
