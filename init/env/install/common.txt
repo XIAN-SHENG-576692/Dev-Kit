@@ -3,6 +3,7 @@ git
 gh
 
 # Others
+dos2unix
 less
 lsof
 neovim
