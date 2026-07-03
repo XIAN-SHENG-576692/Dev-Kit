@@ -5,15 +5,15 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 # ==================================================
 # Configuration
 ROOT_DIR=$(cd "${SCRIPT_DIR}/.."; pwd)
-ENV_DIR="${ROOT_DIR}/env"
-ENV_FILE="${ENV_DIR}/.env"
-
-# Configuration Load
-source "${ENV_FILE}"
 
 # ==================================================
 # Init
 ${ROOT_DIR}/init/env/gen_env.sh
+
+# Configuration Load
+ENV_DIR="${ROOT_DIR}/env"
+ENV_FILE="${ENV_DIR}/.env"
+source "${ENV_FILE}"
 
 # ==================================================
 # Generate install list files
