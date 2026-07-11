@@ -43,7 +43,7 @@ ${TOOLS_DIR}/utils/concat_files.sh \
 grep -v '^#' "${INSTALL_TXT}" \
     | xargs "${TOOLS_DIR}/utils/install_cross_platform.sh"
 
-# Install
+# Install Python
 python3 -m venv "${PYTHON_VENV_DIR}" \
     && source "${PYTHON_VENV_ACTIVATE}" \
     && pip3 install -r "${PYTHON_REQUIREMENTS_TXT}" \
