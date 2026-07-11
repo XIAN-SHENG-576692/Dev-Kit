@@ -1,9 +1,6 @@
 # For compile typst
 build-essential
 
-# Fix curl: (77) error setting certificate file
-ca-certificates
-
 # For compile typst
 libssl-dev
 

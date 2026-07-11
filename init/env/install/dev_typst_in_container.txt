@@ -1,6 +1,3 @@
-# Fix curl: (77) error setting certificate file
-ca-certificates
-
 # For install cargo-binstall
 curl
 

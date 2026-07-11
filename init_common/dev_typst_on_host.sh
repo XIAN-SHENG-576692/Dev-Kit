@@ -28,6 +28,7 @@ ${TOOLS_DIR}/utils/concat_files.sh \
 
 ${TOOLS_DIR}/utils/concat_files.sh \
     --files \
+    ${ROOT_DIR}/init/env/install/ca-certificates.txt \
     ${ROOT_DIR}/init/env/install/common.txt \
     ${ROOT_DIR}/init/env/install/dev_typst_on_host.txt \
     > "${INSTALL_TXT}"

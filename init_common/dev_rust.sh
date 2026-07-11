@@ -23,20 +23,20 @@ VSCODE_EXTENSIONS_TXT="${ENV_DIR}/vscode_extensions.txt"
 
 ${TOOLS_DIR}/utils/concat_files.sh \
     --files \
-    ${ROOT_DIR}/init/env/cargo/dev_typst_in_container.txt \
+    ${ROOT_DIR}/init/env/cargo/dev_rust.txt \
     > "${CARGO_INSTALL_TXT}"
 
 ${TOOLS_DIR}/utils/concat_files.sh \
     --files \
     ${ROOT_DIR}/init/env/install/ca-certificates.txt \
     ${ROOT_DIR}/init/env/install/common.txt \
-    ${ROOT_DIR}/init/env/install/dev_typst_in_container.txt \
+    ${ROOT_DIR}/init/env/install/dev_rust.txt \
     > "${INSTALL_TXT}"
 
 ${TOOLS_DIR}/utils/concat_files.sh \
     --files \
     ${ROOT_DIR}/init/env/vscode_extensions/common.txt \
-    ${ROOT_DIR}/init/env/vscode_extensions/dev_typst.txt \
+    ${ROOT_DIR}/init/env/vscode_extensions/dev_rust.txt \
     > "${VSCODE_EXTENSIONS_TXT}"
 
 # ==================================================
@@ -45,14 +45,11 @@ grep -v '^#' "${INSTALL_TXT}" \
     | xargs "${TOOLS_DIR}/utils/install_cross_platform.sh"
 
 # Install Cargo
-${ROOT_DIR}/init/others/install_cargo-binstall.sh
+${ROOT_DIR}/init/others/install_rustc.sh
 source ${ROOT_DIR}/init/others/export_cargo_env.sh
 grep -v '^#' "${CARGO_INSTALL_TXT}" | grep -v '^$' | while read -r line; do
     $line
 done
-
-# Pull typst image
-podman pull ghcr.io/typst/typst:latest
 
 # Install VS Code extensions
 grep -v '^#' "${VSCODE_EXTENSIONS_TXT}" | grep -v '^$' | while read -r line; do

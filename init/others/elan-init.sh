@@ -1,7 +1,5 @@
-#!/bin/bash
-
 curl \
     --proto '=https' \
-    --tlsv1.2 https://sh.rustup.rs \
+    --tlsv1.2 https://elan.lean-lang.org/elan-init.sh \
     -sSf \
     | sh -s -- -y

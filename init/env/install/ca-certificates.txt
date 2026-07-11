@@ -1,0 +1,4 @@
+# Fix 
+# - curl: (77) error setting certificate file
+# - fatal: unable to access 'https://example.com': Problem with the SSL CA cert (path? access rights?)
+ca-certificates
