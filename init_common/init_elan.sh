@@ -17,7 +17,15 @@ source "${ENV_FILE}"
 
 # ==================================================
 # Generate install list files
+INSTALL_TXT="${ENV_DIR}/install.txt"
 VSCODE_EXTENSIONS_TXT="${ENV_DIR}/vscode_extensions.txt"
+
+${TOOLS_DIR}/utils/concat_files.sh \
+    --files \
+    ${ROOT_DIR}/init/env/install/ca-certificates.txt \
+    ${ROOT_DIR}/init/env/install/common.txt \
+    ${ROOT_DIR}/init/env/install/elan-init.txt \
+    > "${INSTALL_TXT}"
 
 ${TOOLS_DIR}/utils/concat_files.sh \
     --files \
@@ -26,6 +34,10 @@ ${TOOLS_DIR}/utils/concat_files.sh \
 
 # ==================================================
 # Install
+grep -v '^#' "${INSTALL_TXT}" \
+    | xargs "${TOOLS_DIR}/utils/install_cross_platform.sh"
+
+# Install elan
 "${ROOT_DIR}/init/others/elan-init.sh"
 source "${ROOT_DIR}/init/others/export_elan_env.sh"
 

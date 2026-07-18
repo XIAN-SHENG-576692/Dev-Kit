@@ -1,0 +1,2 @@
+# For fetch https://elan.lean-lang.org/elan-init.sh
+curl
