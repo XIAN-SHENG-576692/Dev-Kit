@@ -1,2 +1,0 @@
-cargo install typst-cli --locked
-cargo install typstyle --locked

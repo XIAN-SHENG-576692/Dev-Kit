@@ -5,5 +5,12 @@
 
   "workspaceFolder": "/workspace",
 
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+
+  "runArgs": [
+    "-it",
+    "--cap-add=SYS_PTRACE",
+    "--privileged",
+    "--security-opt=seccomp=unconfined"
+  ]
 }

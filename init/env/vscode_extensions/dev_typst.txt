@@ -1,5 +1,0 @@
-# Typst
-myriad-dreamin.tinymist
-
-# PDF
-tomoki1207.pdf
