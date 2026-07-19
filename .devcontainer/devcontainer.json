@@ -2,15 +2,15 @@
   "image": "debian:trixie-slim",
   
   "name": "Dev-Kit-Test-Container",
-
-  "workspaceFolder": "/workspace",
-
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-
+  
   "runArgs": [
     "-it",
     "--cap-add=SYS_PTRACE",
     "--privileged",
     "--security-opt=seccomp=unconfined"
-  ]
+  ],
+
+  "workspaceFolder": "/workspace",
+
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind"
 }
